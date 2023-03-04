@@ -2,7 +2,7 @@
 from pyfile_parser import check_imports, get_lines, get_responses, parse_and_return_responses
 
 def test_imports():
-    """Test that the check_imports function returns True when the file contains an import of flask"""
+    """Test that the check_imports function correctly checks for import of flask"""
     assert check_imports(get_lines('sample_app.py')) is True
 
 def test_responses():
