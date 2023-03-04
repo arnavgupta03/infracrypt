@@ -1,3 +1,4 @@
+"""Encode flask responses in python file."""
 def check_response_type(response) -> str:
     """Return the type of the response"""
     if isinstance(response, str):
