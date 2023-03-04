@@ -35,5 +35,5 @@ def parse_and_return_responses(filename) -> list:
     lines = get_lines(filename)
     if not check_imports(lines):
         return 'No imports of flask found, file is invalid'
-    indexed_lines = enumerate(lines)
+    indexed_lines = list(enumerate(lines))
     return get_responses(indexed_lines)

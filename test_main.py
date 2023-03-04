@@ -7,15 +7,19 @@ def test_imports():
 
 def test_responses():
     """Test that the get_responses function returns the correct responses"""
-    i_lines = enumerate(get_lines('sample_app.py'))
+    i_lines = list(enumerate(get_lines('sample_app.py')))
     assert get_responses(i_lines) == [
         "return 'Hello, World!'",
-        "return {'test_response': 'This is a test'}"
+        "return {'test_response': 'This is a test'}",
+        "return 1",
+        "return [1, 2, 3]"
     ]
 
 def test_parse_and_return_responses():
     """Test that the parse_and_return_responses function returns the correct responses"""
     assert parse_and_return_responses('sample_app.py') == [
         "return 'Hello, World!'",
-        "return {'test_response': 'This is a test'}"
+        "return {'test_response': 'This is a test'}",
+        "return 1",
+        "return [1, 2, 3]"
     ]
