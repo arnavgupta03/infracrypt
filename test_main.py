@@ -1,4 +1,5 @@
 """Tests for overall functionality."""
+import pytest
 from pyfile_parser import check_imports, get_lines, get_responses, parse_and_return_responses
 from pyfile_encode import get_encryption_key, encrypt_single_response, decrypt_single_response
 
@@ -25,12 +26,14 @@ def test_parse_and_return_responses():
         "return [1, 2, 3]"
     ]
 
+@pytest.mark.skip(reason="no way of getting key without hardware")
 def test_get_encoding_key():
     """Test to get the encoding key correctly"""
     key = get_encryption_key()
     print(key)
     assert key is not None
 
+@pytest.mark.skip(reason="no way of getting key without hardware")
 def test_encrypt_single_response():
     """Test that the encrypt_single_response function returns the correct response"""
     assert decrypt_single_response(encrypt_single_response(
