@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+sample_app_copy.py
+encrypted_responses.json

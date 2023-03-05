@@ -16,7 +16,7 @@ def test():
 @app.route('/test_int')
 def test_int():
     """Return a simple integer response."""
-    return 1
+    return 123
 
 @app.route('/test_list')
 def test_list():

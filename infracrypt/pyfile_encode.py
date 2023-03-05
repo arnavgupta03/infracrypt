@@ -53,3 +53,7 @@ def decrypt_single_response(response: dict) -> str:
         b64decode(response['tag'])
     )
     return plaintext.decode('utf-8')
+
+def encrypt_responses(responses: list) -> list:
+    """Encrypt a list of responses"""
+    return [encrypt_single_response(response) for response in responses if check_response_type(response) != 'unknown']

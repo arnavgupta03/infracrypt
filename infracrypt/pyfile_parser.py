@@ -19,11 +19,11 @@ def get_responses(i_lines) -> list:
     return_lines = []
     for j, start in enumerate(route_starts[:-1]):
         return_lines.append([
-            line for (i, line) in i_lines[start:route_starts[j + 1]]
+            (i + 1, line) for (i, line) in i_lines[start:route_starts[j + 1]]
             if line.startswith('return')
         ])
     return_lines.append([
-        line for (i, line) in i_lines[route_starts[-1]:]
+        (i + 1, line) for (i, line) in i_lines[route_starts[-1]:]
         if line.startswith('return')
     ])
     if len(return_lines) < 1:
