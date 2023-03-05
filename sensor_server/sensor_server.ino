@@ -96,13 +96,13 @@ void loop(){
             client.println();
 
             // the content of the HTTP response follows the header:
-            client.print((uint64_t) distanceCm | key1, 16);
+            client.print((uint64_t) (distanceCm * 1000) | key1, 16);
             client.print("\n");
-            client.print((uint64_t) distanceCm & key1, 16);
+            client.print((uint64_t) (distanceCm * 1000) & key1, 16);
             client.print("\n");
-            client.print((uint64_t) distanceCm | key2, 16);
+            client.print((uint64_t) (distanceCm * 1000) | key2, 16);
             client.print("\n");
-            client.print((uint64_t) distanceCm & key2, 16);
+            client.print((uint64_t) (distanceCm * 1000) & key2, 16);
 
             // The HTTP response ends with another blank line:
             client.println();
